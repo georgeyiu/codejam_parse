@@ -17,7 +17,7 @@ Input:
     test string 2
     test string 3
 
-The first line is the number of tests N. N lines follow, each representing test string.
+The first line is the number of tests N. N lines follow, each representing a test string.
 
     schema = [(), [str]]
 
@@ -47,6 +47,6 @@ For each test case, the first line is the number of rows in the matrix and the s
 
     schema = [(), [(), int, [lambda line: map(int, line.split())]]]
 
-The number of columns does not affect the structure of the parse, but is still retained in the structure as an integer. This is an example of how `()` and `int` differ. A subschema must always be accompanied by a `()`. Using this schema, we parse the input as
+The number of columns does not affect the structure of the parse, but is still retained in the structure as an integer. This is an example of how `()` and `int` differ. A subschema must always be accompanied by a `()` in the same list level. Using this schema, we parse the input as
 
     [2, [[3, 3, [[1, 2, 3], [4, 5, 6], [7, 8, 9]]], [2, 3, [[4, 3, 8], [3, 7, 1]]]]]
