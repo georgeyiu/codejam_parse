@@ -23,7 +23,7 @@ def parse(schema):
     '''
 	with open(sys.argv[1], 'r') as f:
 		lines = [l.rstrip('\n') for l in f.readlines()]
-	return grouper(lines, schema)
+	return grouper(lines, list(schema))
 
 def grouper(lines, schema):
 	''' Parse schema by consuming lines'''
